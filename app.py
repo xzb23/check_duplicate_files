@@ -1,5 +1,5 @@
 from _in_package import *
-from config import *
+import config
 import common
 import runing_data
 
@@ -31,13 +31,22 @@ def print_info():
             print()
 
 
+def reg_opts():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-P", "--path", default=None, required=False)
+    parser.add_argument("--fsize", default=None, required=False, help="只打印文件大小大于fsize Byte的重复文件")
+    args = parser.parse_args()
+    if args.path != None:
+        config.work_dir = args.path
+    elif args.fsize != None:
+        config.flag_size = args.fsize
 
-work_dir = sys.argv[1]
+reg_opts()
 
-if not os.path.exists(work_dir):
+if not os.path.exists(config.work_dir):
     exit(-1)
 
-traverse_dir(work_dir)
+traverse_dir(config.work_dir)
 hash_files_from_glist(hashlib.sha256)
 
 print_info()
