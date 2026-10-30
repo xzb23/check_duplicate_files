@@ -32,7 +32,7 @@ def print_info():
 
 
 
-work_dir = get_config("work_dir")
+work_dir = sys.argv[1]
 
 if not os.path.exists(work_dir):
     exit(-1)
