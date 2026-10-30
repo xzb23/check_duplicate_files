@@ -38,8 +38,8 @@ def reg_opts():
     args = parser.parse_args()
     if args.path != None:
         config.work_dir = args.path
-    elif args.fsize != None:
-        config.flag_size = args.fsize
+    if args.fsize != None:
+        config.flag_size = int(args.fsize)
 
 reg_opts()
 
