@@ -15,7 +15,7 @@
 1. 下载程序
 2. 添加环境变量（可选）
 3. 在终端中执行\
-`python app.py [-P] [--fsize]`
+`check_duplicate_files [-P] [--fsize]`
 
 # 参数选项
 ```
