@@ -12,6 +12,7 @@
 `git clone https://github.com/xzb23/check_duplicate_files.git`
 2. `python app.py [-P] [--fsize]`
 ## 可执行文件（仅Windows提供）
+### 使用方法
 1. 下载程序
 2. 添加环境变量（可选）
 3. 在终端中执行\
