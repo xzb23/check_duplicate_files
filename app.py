@@ -16,6 +16,7 @@ def traverse_dir(root_dir):
 def hash_files_from_glist(algorithm: function):
     print("正在计算文件散列ing...")
     i = 0
+    p_old_i = -1
     for f_path in runing_data.file_path_list:
         with open(f_path, "rb") as f:
             f_hash = hashlib.file_digest(f, algorithm)
@@ -25,7 +26,7 @@ def hash_files_from_glist(algorithm: function):
         if i % config.wait_c == 0:
             p_old_i = i
             print(f"\r{i}/{len(runing_data.file_path_list)}", end="")
-    if i != p_old_i:
+    if p_old_i != -1 and i != p_old_i:
         print(f"\r{i}/{len(runing_data.file_path_list)}", end="")
     print()
     
