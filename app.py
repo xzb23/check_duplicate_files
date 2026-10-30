@@ -23,7 +23,7 @@ def print_info():
     for t in runing_data.hash_to_files:
         if len(runing_data.hash_to_files[t]) > 1:
             st_size = os.stat(runing_data.hash_to_files[t][0]).st_size
-            if st_size <= 10240:
+            if st_size <= config.flag_size:
                 continue
             print(t, f"size: {st_size} Byte")
             for fp in runing_data.hash_to_files[t]:
