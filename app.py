@@ -20,7 +20,7 @@ def hash_files_from_glist(algorithm: function):
     for f_path in runing_data.file_path_list:
         with open(f_path, "rb") as f:
             f_hash = hashlib.file_digest(f, algorithm)
-            runing_data.file_hash_results.append(runing_data.FileHashResult(f_path, f_hash.hexdigest(), algorithm.__name__))
+            # runing_data.file_hash_results.append(runing_data.FileHashResult(f_path, f_hash.hexdigest(), algorithm.__name__))
             runing_data.hash_to_files[(f_hash.hexdigest(), algorithm.__name__)].append(f_path)
         i += 1
         if i % config.wait_c == 0:
